@@ -1,0 +1,19 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+<title>Cat API Example</title>
+</head>
+<body>
+<imgid="cat-image"src=""alt="Random cat image">
+<script>
+constrequest= newXMLHttpRequest();
+request.open('GET', 'https://api.thecatapi.com/v1/images/search');
+request.onload= function() {
+constdata= JSON.parse(request.responseText);
+constcatImage= document.getElementById('cat-image');
+catImage.src= data[0].url;
+};
+request.send();
+</script>
+</body>
+</html>
